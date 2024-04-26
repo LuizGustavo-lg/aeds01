@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    const int qnt=20;
+    const int qnt=10;
     float num;
 
     for (int i=0; i<qnt; i++){
