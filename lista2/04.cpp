@@ -22,7 +22,7 @@ int main(){
     int idade;
     float peso;
     
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 20; i++){
         cout << "Digite a idade e peso: ";
         cin >> idade >> peso;
 

@@ -14,7 +14,7 @@ void imprimir_alunos(string nomes[], float notas[][3], int qnt, float media){
 
 
 int main(){
-    const int Q_ALUNOS = 3;
+    const int Q_ALUNOS = 15;
 
     string nomes[Q_ALUNOS];
     float notas[Q_ALUNOS][3];

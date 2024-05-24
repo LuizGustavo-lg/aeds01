@@ -7,10 +7,10 @@ void imprimir_op(int notas[3][2], int espectadores){
     << "\n    Porcentagem de pessoas: " << ((float) notas[0][1] / espectadores) * 100 << "%\n"
     
     << "BOM: \n    Idade média: " << notas[1][0] / notas[1][1] 
-    << "\n    Porcentagem de pessoas: " << (notas[1][1] / espectadores) * 100 << "%\n"
+    << "\n    Porcentagem de pessoas: " << ((float) notas[1][1] / espectadores) * 100 << "%\n"
     
     << "EXCELENTE: \n    Idade média: " << notas[2][0] / notas[2][1] 
-    << "\n    Porcentagem de pessoas: " << (notas[2][1] / espectadores) * 100 << "%\n" << endl;
+    << "\n    Porcentagem de pessoas: " << ((float) notas[2][1] / espectadores) * 100 << "%\n" << endl;
 }
 
 int main(){
