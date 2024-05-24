@@ -1,47 +1,34 @@
 #include <iostream>
 using namespace std;
 
-
-void calc_media_pessoas(float p[20][2]) {
-    float soma1, soma11, soma21, soma30;
-    float qnt1, qnt11, qnt21, qnt30;
-
-    soma1 = soma11 = soma21 = soma30 = qnt1 = qnt11 = qnt21 = qnt30 = 0;
-    
-    for (int i = 0; i < 20; i++){
-        if (p[i][0] >= 1 && p[i][0] < 11) {
-            soma1 += p[i][1];
-            ++qnt1;
-
-        } else if (p[i][0] >= 11 && p[i][0] < 21) {
-            soma11 += p[i][1];
-            ++qnt11;
-
-        } else if (p[i][0] >= 21 && p[i][0] < 31) {
-            soma21 += p[i][1];
-            ++qnt21;
-
-        } else if (p[i][0] >= 31) {
-            soma30 += p[i][1];
-            ++qnt30;
-
-        } 
-    }
-
-    cout << "1 a 10 anos: " << soma1/qnt1 
-    << "\n11 a 20 anos: " << soma11/qnt11
-    << "\n21 a 30 anos: " << soma21/qnt21
-    << "\nmaiores que 30 anos: " << soma30/qnt30 << endl;
+void imp_media_pessoas(float p[4][2]) {
+    cout << "Médias: " 
+    << "\n1 a 10 anos: " << p[0][0]/p[0][1]
+    << "\n11 a 20 anos: " << p[1][0]/p[1][1]
+    << "\n21 a 30 anos: " <<  p[2][0]/p[2][1]
+    << "\nmaiores que 30 anos: " << p[3][0]/p[3][1] << endl;
 }
 
+int get_indice_idade(int idade){
+        if (idade >= 1 && idade < 11) return 0;
+        else if (idade >= 11 && idade < 21) return 1;
+        else if (idade >= 21 && idade < 31) return 2;
+        else if (idade >= 31) return 3;
+        return -1;
+}
 
 int main(){
-    float pessoas[20][2];
+    float pessoas[4][2] = {{0, 0}, {0, 0}, {0, 0}, {0, 0}};
+    int idade;
+    float peso;
     
-    for (int i = 0; i < 20; i++){
+    for (int i = 0; i < 5; i++){
         cout << "Digite a idade e peso: ";
-        cin >> pessoas[i][0] >> pessoas[i][1];
+        cin >> idade >> peso;
+
+        pessoas[get_indice_idade(idade)][0] += peso;
+        pessoas[get_indice_idade(idade)][1] += 1;
     }
 
-    calc_media_pessoas(pessoas);
+    imp_media_pessoas(pessoas);
 }
